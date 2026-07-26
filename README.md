@@ -1,72 +1,52 @@
-# 🛒 Retail Sales Intelligence App
+# 🌤️ Weather Intelligence Web Application
 
-An interactive, web-based analytics dashboard designed for retail business stakeholders to track, analyze, and gain actionable insights into store sales performance across multiple operating regions.
+An interactive, responsive, single-page Weather Intelligence Web Application built using **React**, **Vite**, and **Tailwind CSS**. The app utilizes the free and open **Open-Meteo APIs** to deliver real-time weather metrics, 7-day forecasts, and automated smart planning recommendations.
 
 ---
 
 ## 🌟 Live Demo & Resources
 
-- **Live Application:** [Deploy Link on Cloudflare Pages / Vercel]
+- **Live Application:** [https://00cbf15d-stackai2.vasanth-ravichan.workers.dev/](https://00cbf15d-stackai2.vasanth-ravichan.workers.dev/)
 - **GitHub Repository:** [https://github.com/vasanthravichanderan/stackai](https://github.com/vasanthravichanderan/stackai)
-- **Built With:** Google AI Studio App Builder
+- **AI Studio App Builder:** [View in Google AI Studio](https://aistudio.google.com/apps/3b694b8c-9215-4803-8ca4-d41dc566f594?showPreview=true&showAssistant=true)
 
 ---
 
-## 🚀 Key Features
+## 🚀 Features
 
-### 1. Data Integration & File Upload
-- **Dynamic File Parsing:** Upload two Excel spreadsheet datasets directly into the dashboard:
-  - `retail_weekly_sales.xlsx` (Weekly transaction and sales records)
-  - `store_master.xlsx` (Store metadata and target reference data)
-- **Instant Client-Side Processing:** Automatically joins datasets and updates all KPIs, charts, and insight cards upon file submission.
+### 1. City Search & Geocoding
+- **Location Lookup:** Allows users to search for any city globally.
+- **Geocoding API:** Translates city names into exact latitude and longitude coordinates using the Open-Meteo Geocoding API (`https://geocoding-api.open-meteo.com/v1/search?name=`).
 
-### 2. Global Interactive Filters
-Filter all dashboard views synchronously using the sidebar controls:
-- **Time Period:** Week
-- **Geographic:** Region, City
-- **Store-Level:** Store Name / Store ID, Store Format
-- **Product-Level:** Product Category
+### 2. Live Weather Data & 7-Day Forecast
+- **Real-Time Weather Metrics:** Fetches current temperature, weather state (sunny, rainy, cloudy, etc.), humidity, and wind speed using the Open-Meteo Forecast API (`https://api.open-meteo.com/v1/forecast`).
+- **7-Day Outlook:** Displays clean forecast cards showing daily high and low temperatures along with visual condition indicators.
 
-### 3. Key Performance Indicator (KPI) Summary Cards
-Prominently displays core retail metrics at a glance:
-- **Net Sales ($):** Total revenue generated after discounts and returns.
-- **Target Achievement (%):** Comparison of actual sales against store master targets.
-- **Average Transaction Value ($):** Mean revenue per transaction.
-- **Return Rate (%):** Calculated as `(return_amount / net_sales) * 100`.
-- **Discount Rate (%):** Total promotional discounts as a percentage of gross sales.
-- **Stockout Indicators / Risk Count:** Real-time tally of products/stores with inventory risk.
+### 3. Smart Planning Recommendations
+- **Automated Insights:** Analyzes upcoming condition codes to provide actionable daily advice:
+  - ☔ **Rain/Storm Warning:** Suggests carrying an umbrella or wearing waterproof gear.
+  - ☀️ **High UV / Heat Alert:** Recommends sunscreen and light clothing on hot days.
+  - ❄️ **Cold/Snow Warning:** Highlights heavy coats or layering requirements.
 
-### 4. Interactive Data Visualizations
-- **Weekly Sales Trend:** Line chart tracking sales progression over time.
-- **Sales by Region:** Comparative bar chart highlighting performance across regions.
-- **Category Performance:** Donut / horizontal bar chart showing category distribution.
-- **Store Leaderboard:** Top and bottom store rankings.
-- **Stockout Risk Grid:** Visual indicator table mapping critical stock levels.
-
-### 5. Automated Business Insights
-Auto-generates actionable, plain-language summaries based on current filters:
-- **Regional Highlights:** Outlines top and underperforming geographical zones.
-- **Target Tracking:** Flags stores failing to meet sales benchmarks.
-- **Quality Alert:** Pinpoints product categories experiencing elevated return rates.
-
-### 6. Export & Report Sharing
-- One-click option to export filtered summaries and business insight reports.
-- Fully responsive layout optimized for desktop, tablet, and mobile views.
+### 4. Robust Error Handling & Public API Compliance
+- **Graceful Error Recovery:** Safely catches empty queries, invalid city names, or network request timeouts and displays user-friendly alert badges (e.g., *"City not found or network error. Please check spelling and try again."*).
+- **Zero API Keys:** Uses 100% public Open-Meteo endpoints—no secret credentials, hidden environment variables, or private keys required.
 
 ---
 
-## 🛠️ Tech Stack & Prerequisites
+## 🛠️ Tech Stack
 
-- **Frontend Framework:** React / HTML5 / Tailwind CSS
-- **Chart Library:** Chart.js / Recharts
-- **Data Parsing:** SheetJS (`xlsx`) for client-side Excel processing
-- **Hosting & CI/CD:** GitHub + Cloudflare Pages / Vercel
+- **Build Tool / Bundler:** [Vite](https://vitejs.dev/)
+- **Frontend Library:** [React](https://react.dev/)
+- **Styling Utility:** [Tailwind CSS](https://tailwindcss.com/)
+- **Data Source:** [Open-Meteo Free Weather API](https://open-meteo.com/)
+- **Deployment & Hosting:** Cloudflare Pages
 
 ---
 
 ## 💻 Local Setup & Development
 
-Follow these steps to run the application locally:
+Follow these steps to run the application locally on your machine:
 
 1. **Clone the Repository:**
    ```bash
